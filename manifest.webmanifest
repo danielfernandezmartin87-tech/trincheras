@@ -1,0 +1,19 @@
+{
+  "name": "¡A las Trincheras!",
+  "short_name": "Trincheras",
+  "description": "Defiende la línea, de Normandía a los Alpes. Juego de defensa por carriles ambientado en 1944-1945.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "landscape",
+  "background_color": "#14170f",
+  "theme_color": "#14170f",
+  "categories": ["games", "strategy"],
+  "icons": [
+    { "src": "icons/icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
