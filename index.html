@@ -1,0 +1,121 @@
+<!doctype html>
+<!-- Página de presentación que sirve GitHub Pages desde que el juego dejó de estar en la web (tools/deploy.js).
+     Cuando la app esté publicada, se pone su enlace en PLAY_URL y el botón pasa de «Próximamente» a «Disponible». -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>¡A las Trincheras! · Hold the Trench!</title>
+<meta name="description" content="Juego de estrategia y defensa por carriles en el frente occidental, 1944-1945. Pronto en Google Play.">
+<meta name="author" content="Daniel Fernández Martín">
+<meta name="theme-color" content="#14170f">
+<link rel="icon" href="icons/icono-192.png">
+<meta property="og:title" content="¡A las Trincheras! · Hold the Trench!">
+<meta property="og:description" content="Defiende la línea, de Normandía a los Alpes. Hold the line, from Normandy to the Alps.">
+<meta property="og:image" content="img/portada-es.png">
+<style>
+@font-face { font-family: "Saira Stencil One"; src: url(fuentes/saira-stencil-one-400-latin.woff2) format("woff2"); }
+@font-face { font-family: "Saira Stencil One"; src: url(fuentes/saira-stencil-one-400-latin-ext.woff2) format("woff2"); unicode-range: U+0100-024F, U+00A1, U+00BF; }
+@font-face { font-family: "Saira Condensed"; font-weight: 500; src: url(fuentes/saira-condensed-500-latin.woff2) format("woff2"); }
+@font-face { font-family: "Saira Condensed"; font-weight: 500; src: url(fuentes/saira-condensed-500-latin-ext.woff2) format("woff2"); unicode-range: U+0100-024F; }
+@font-face { font-family: "Saira Condensed"; font-weight: 700; src: url(fuentes/saira-condensed-700-latin.woff2) format("woff2"); }
+@font-face { font-family: "Saira Condensed"; font-weight: 700; src: url(fuentes/saira-condensed-700-latin-ext.woff2) format("woff2"); unicode-range: U+0100-024F; }
+:root { --bg: #14170f; --panel: #1c1d14; --paper: #efe3c2; --khaki: #c9bd98; --brass: #e0a82e; --line: #3a3a2a; }
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body { margin: 0; color: var(--paper); font: 500 19px/1.5 "Saira Condensed", system-ui, sans-serif; }
+a { color: var(--brass); }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+header { display: flex; justify-content: flex-end; padding: 14px 0 0; }
+.lang { font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 15px; background: none; border: 2px solid var(--khaki); color: var(--khaki); padding: 6px 14px; cursor: pointer; }
+.hero { margin-top: 14px; border: 3px solid var(--line); background: var(--panel); }
+.hero img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+.intro { padding: 26px 0 8px; }
+.eyebrow { color: var(--brass); font-weight: 700; letter-spacing: .2em; text-transform: uppercase; font-size: 15px; margin: 0; }
+h1 { font: 400 clamp(40px, 7vw, 64px)/1.05 "Saira Stencil One", sans-serif; margin: 8px 0 10px; }
+.lede { color: var(--khaki); font-size: 22px; margin: 0 0 22px; max-width: 760px; }
+.play { display: inline-block; padding: 14px 26px; background: var(--brass); color: var(--bg); font-weight: 700; font-size: 20px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border-bottom: 5px solid #8a6418; }
+.play.soon { background: none; color: var(--brass); border: 2px solid var(--brass); }
+h2 { font: 700 15px "Saira Condensed", sans-serif; letter-spacing: .2em; text-transform: uppercase; color: var(--brass); margin: 46px 0 14px; }
+.feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; padding: 0; margin: 0; list-style: none; }
+.feats li { background: var(--panel); border-left: 4px solid var(--brass); padding: 14px 16px; }
+.feats b { display: block; font-size: 20px; }
+.feats span { color: var(--khaki); }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.shots img { display: block; width: 100%; height: auto; border: 2px solid var(--line); }
+footer { margin: 52px 0 28px; padding-top: 18px; border-top: 2px solid var(--line); color: var(--khaki); font-size: 16px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 8px; }
+html:not([lang="en"]) [data-l="en"], html[lang="en"] [data-l="es"] { display: none !important; }     /* cada texto, solo en su idioma */
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><button class="lang" id="lang" type="button"><span data-l="es">English</span><span data-l="en">Español</span></button></header>
+
+  <div class="hero">
+    <img data-l="es" src="img/portada-es.png" width="1024" height="500" alt="¡A las Trincheras!: soldados aliados en una trinchera bajo un cielo con paracaídas">
+    <img data-l="en" src="img/portada-en.png" width="1024" height="500" alt="Hold the Trench!: Allied soldiers in a trench under a sky full of parachutes">
+  </div>
+
+  <section class="intro">
+    <p class="eyebrow"><span data-l="es">Frente occidental · 1944-1945</span><span data-l="en">Western Front · 1944-1945</span></p>
+    <h1><span data-l="es">¡A las Trincheras!</span><span data-l="en">Hold the Trench!</span></h1>
+    <p class="lede">
+      <span data-l="es">Juego de estrategia y defensa por carriles: coloca tus tropas, levanta sacos terreros y aguanta la línea de Normandía a los Alpes.</span>
+      <span data-l="en">A lane-defence strategy game: deploy your troops, raise sandbags and hold the line from Normandy to the Alps.</span>
+    </p>
+    <a class="play soon" id="play" href="#"><span data-l="es">Próximamente en Google Play</span><span data-l="en">Coming soon to Google Play</span></a>
+  </section>
+
+  <h2><span data-l="es">El juego</span><span data-l="en">The game</span></h2>
+  <ul class="feats">
+    <li><b><span data-l="es">30 misiones de historia real</span><span data-l="en">30 missions from real history</span></b>
+      <span data-l="es">Del desembarco de Normandía a los Alpes, con informes ilustrados de cada batalla.</span><span data-l="en">From the Normandy landings to the Alps, with an illustrated briefing for every battle.</span></li>
+    <li><b><span data-l="es">20 unidades, 27 enemigos y 6 jefes</span><span data-l="en">20 units, 27 enemies and 6 bosses</span></b>
+      <span data-l="es">Bazucas, tiradores de élite y el Sherman contra Tiger, submarinos, Stukas y misiles V-2.</span><span data-l="en">Bazookas, sharpshooters and the Sherman against Tigers, submarines, Stukas and V-2 missiles.</span></li>
+    <li><b><span data-l="es">Mucho más que una campaña</span><span data-l="en">Much more than a campaign</span></b>
+      <span data-l="es">5 fases de bonus, retos diarios y semanales, modo sin fin y dificultad Veterano.</span><span data-l="en">5 bonus stages, daily and weekly challenges, endless mode and Veteran difficulty.</span></li>
+    <li><b><span data-l="es">Pago único</span><span data-l="en">One-time purchase</span></b>
+      <span data-l="es">Sin anuncios ni compras dentro de la app. Funciona sin conexión, en español y en inglés.</span><span data-l="en">No ads and no in-app purchases. Plays offline, in English and Spanish.</span></li>
+  </ul>
+
+  <h2><span data-l="es">Capturas</span><span data-l="en">Screenshots</span></h2>
+  <div class="shots" id="shots"></div>
+
+  <footer>
+    <nav>
+      <a href="legal/privacidad.html"><span data-l="es">Privacidad</span><span data-l="en">Privacy</span></a>
+      <a href="legal/terminos.html"><span data-l="es">Términos de uso</span><span data-l="en">Terms of use</span></a>
+      <a href="legal/aviso-legal.html"><span data-l="es">Aviso legal</span><span data-l="en">Legal notice</span></a>
+      <a href="mailto:daniel.fernandezmartin87@gmail.com"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
+    </nav>
+    © 2026 Daniel Fernández Martín.
+  </footer>
+</div>
+<script>
+// Enlace de la ficha de Google Play: vacío mientras la app no esté publicada.
+const PLAY_URL = '';
+const SHOTS = ['02', '03', '04', '05', '06', '07'];
+const ALT = {
+  es: ['Batalla en la nieve de las Ardenas', 'Canales con lanchas y cañoneras', 'Combate entre las ruinas de Aquisgrán', 'El jefe final y la diana de un misil V-2', 'Informe ilustrado de las Ardenas', 'Fase de bonus: defensa del depósito'],
+  en: ['Battle in the Ardennes snow', 'Canals with patrol boats and gunboats', 'Fighting in the ruins of Aachen', 'The final boss and the target of a V-2 missile', 'Illustrated briefing of the Ardennes', 'Bonus stage: depot defence'],
+};
+function setLang(l) {
+  document.documentElement.lang = l;
+  document.getElementById('shots').innerHTML = SHOTS.map((n, i) => '<img loading="lazy" width="960" height="540" src="img/' + l + '-' + n + '.jpg" alt="' + ALT[l][i] + '">').join('');
+  document.querySelectorAll('footer nav a[href^="legal/"]').forEach(a => { a.href = a.getAttribute('href').split('#')[0] + (l === 'en' ? '#en' : ''); });
+  try { localStorage.setItem('trinchera.lang', l); } catch (e) {}
+}
+let start = 'es';
+try { start = localStorage.getItem('trinchera.lang') || ((navigator.language || 'es').toLowerCase().startsWith('es') ? 'es' : 'en'); } catch (e) {}
+if (location.hash === '#en' || location.hash === '#es') start = location.hash.slice(1);
+setLang(start);
+document.getElementById('lang').addEventListener('click', () => setLang(document.documentElement.lang === 'es' ? 'en' : 'es'));
+const play = document.getElementById('play');
+if (PLAY_URL) {
+  play.href = PLAY_URL; play.classList.remove('soon');
+  play.innerHTML = '<span data-l="es">Disponible en Google Play</span><span data-l="en">Get it on Google Play</span>';
+} else play.addEventListener('click', e => e.preventDefault());
+</script>
+</body>
+</html>
